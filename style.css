@@ -1,3 +1,108 @@
 .none{
     display: none;
 }
+html{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+   
+}
+*,
+*::before,
+::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+   
+}
+header{
+    background-color: red;
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+.buscar{
+    padding: 10px;
+    border-radius: 20px;
+    width: 20%;
+    margin-right: 3rem;
+}
+.Agregar{
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 20px;
+    width: 15%;
+}
+.none{
+    display: none;
+}
+ 
+ 
+table{
+    width: 90%;
+   
+}
+ 
+.contenedor_tabla{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ 
+tbody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+tr{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid;
+}
+th{
+    width: 100%;
+    padding: 20px;
+    background-color: aqua;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+}
+ 
+.buttonEliminar{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px;
+    width: 50%;
+}
+.buttonEditar{
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px;
+    width: 50%;
+    margin-right: 1rem;
+}
+.formulario_agregar{
+    padding: 10px;
+}
+.formulario_agregar input{
+    padding: 20px;
+}
