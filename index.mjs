@@ -20,10 +20,31 @@ let pokemonEditar = null;
 const $tabla = document.querySelector(".tabla_datos");
 const $formularioAgregar = document.querySelector(".formulario_agregar");
 const $inputBuscar = document.querySelector(".buscar");
- 
+const $selectTipo = document.querySelector(".select_tipo");
+
+
+function renderSelect(){ 
+    
+    const $fragmentTipo = document.createDocumentFragment();
+    const tipo =pokeApi.map((pokemon)=>pokemon.tipo)
+    const setTipos =[...new Set(tipo)]
+    
+    setTipos.forEach((tipo)=>{
+        const $option = document.createElement("option");
+        $option.value=tipo
+        $option.innerHTML=tipo
+        
+        $fragmentTipo.appendChild($option)
+        
+    })
+    $selectTipo.appendChild($fragmentTipo)
+
+}
+ renderSelect()
 function renderTable(data) {
     $tabla.innerHTML = "";
     const $fragment = document.createDocumentFragment();
+    
  
     data.forEach((pokemon) => {
         const $tr = document.createElement("tr");
@@ -58,8 +79,8 @@ function renderTable(data) {
 }
  
 // Funcion para filtrar los datos
-function filtrarPokemones() {
-    const filtro = $inputBuscar.value.toLowerCase();
+function filtrarPokemones(filtro) {
+   
     const resultado = pokeApi.filter(pokemon =>
         pokemon.name.toLowerCase().includes(filtro) ||
         pokemon.tipo.toLowerCase().includes(filtro) ||
@@ -105,10 +126,16 @@ function enviarFormulario(e) {
     renderTable(pokeApi);
 }
  
-$inputBuscar.addEventListener("keyup", filtrarPokemones);
+$inputBuscar.addEventListener("keyup", ()=> filtrarPokemones($inputBuscar.value.toLowerCase()));
 $formularioAgregar.addEventListener("keyup", agregarPokemons);
  
 document.addEventListener("click", (e) => {
+
+if(e.target.matches(".select_tipo")){
+if(e.target.value!=="tipo")filtrarPokemones(e.target.value)
+    else renderTable(pokeApi)
+}
+
     if (e.target.value === "Editar") {
        
         editarPokemon(e);

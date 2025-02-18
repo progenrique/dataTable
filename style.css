@@ -205,3 +205,25 @@ td{
 .formulario_agregar input[type=button]:hover{
     background-color: rgb(0, 0, 0,.9);
 }
+
+.select_tipo{
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease-in;
+    border-radius: 16px;
+    padding: 1px;
+}
+
+.select_tipo:hover{
+background-color: blue;
+
+}
+
+
+.select_tipo option{
+    color: black;
+    background-color: white;
+}
