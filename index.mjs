@@ -30,8 +30,7 @@ function renderTable(data) {
         const $tdId = document.createElement("td");
         const $tdName = document.createElement("td");
         const $tdTipo = document.createElement("td");
-        const $tdEliminar = document.createElement("td");
-        const $tdEditar = document.createElement("td");
+        const $tdAcciones = document.createElement("td");        
         const $inputEditar=document.createElement("input")
         const $inputEliminar=document.createElement("input")
         $tdId.textContent = pokemon.id;
@@ -45,13 +44,13 @@ function renderTable(data) {
         $inputEliminar.className="buttonEliminar"
         $inputEliminar.value="Eliminar"
         $inputEliminar.name=pokemon.id
-        $tdEliminar.appendChild($inputEliminar)
-        $tdEditar.appendChild($inputEditar)
+        $tdAcciones.appendChild($inputEliminar)
+        $tdAcciones.appendChild($inputEditar)
         $tr.appendChild($tdId);
         $tr.appendChild($tdName);
         $tr.appendChild($tdTipo);        
-        $tr.appendChild($tdEliminar)
-        $tr.appendChild($tdEditar)
+        $tr.appendChild($tdAcciones)
+      
  
         $fragment.appendChild($tr);
     });
@@ -70,6 +69,7 @@ function filtrarPokemones() {
 }
  
 function agregarPokemons(e) {
+    console.log($formularioAgregar)
     if (e.target.name === "nombre") pokemonEditar.name = e.target.value.toLowerCase();
     if (e.target.name === "tipo") pokemonEditar.tipo = e.target.value.toLowerCase();
 }
@@ -117,7 +117,7 @@ document.addEventListener("click", (e) => {
         eliminarPokemon(e);
     }
     if (e.target.value === "Agregar") {
-        $formularioAgregar.classList.remove("none");
+        $formularioAgregar.classList.toggle("none");
     }
     if (e.target.value === "Enviar") {
         enviarFormulario(e);
