@@ -5,7 +5,13 @@ const pokeApi = [
     { id: 4, name: "squirtle", tipo: "agua" },
     { id: 5, name: "mew", tipo: "psiquico" },
     { id: 6, name: "articuno", tipo: "hielo" },
-    { id: 7, name: "greninja", tipo: "agua" }
+    { id: 7, name: "greninja", tipo: "agua" },
+    { id: 8, name: "greninja", tipo: "agua" },
+    { id: 9, name: "greninja", tipo: "agua" },
+    { id: 10, name: "greninja", tipo: "agua" },
+    { id: 11, name: "greninja", tipo: "agua" },
+    { id: 12, name: "greninja", tipo: "agua" },
+    { id: 13, name: "greninja", tipo: "agua" },
 ];
 // Editar
  
